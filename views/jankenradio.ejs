@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>じゃんけん</title>
+</head>
+<body>
+    <h1>じゃんけん ポン！</h1>
+    <% if (locals.judgement) { %>
+        <div>
+            <p>あなたの手: <%= locals.your %></p>
+            <p>コンピューターの手: <%= locals.cpu %></p>
+            <h2>結果: <%= locals.judgement %>！</h2>
+            <p>現在の成績: <%= locals.win %>勝 / <%= locals.total %>回</p>
+        </div>
+        <hr>
+    <% } %>
+
+    <form action="/jankenradio">
+        <p>手を選んでください:</p>
+        
+        <input type="radio" name="radio" id="radio1" value="1" required>
+        <label for="radio1">グー</label><br>
+
+        <input type="radio" name="radio" id="radio2" value="2">
+        <label for="radio2">チョキ</label><br>
+
+        <input type="radio" name="radio" id="radio3" value="3">
+        <label for="radio3">パー</label><br>
+        <br>
+        <input type="submit" value="じゃんけん　ポン">
+        <input type="hidden" name="win" value="<%= locals.win %>">
+        <input type="hidden" name="total" value="<%= locals.total %>">
+    </form>
+</body>
+</html>
