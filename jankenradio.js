@@ -27,9 +27,9 @@ app.get("/jankenradio", (req, res) => {
   if (hand == cpu) {
     judgement = 'あいこ';
   } else if (
-    (hand == 'グー' && cpu == 'チョキ') ||
-    (hand == 'チョキ' && cpu == 'パー') ||
-    (hand == 'パー' && cpu == 'グー')
+    (hand == 'ぐー' && cpu == 'ちょき') ||
+    (hand == 'ちょき' && cpu == 'ぱー') ||
+    (hand == 'ぱー' && cpu == 'ぐー')
   ) {
     judgement = '勝ち';
     win += 1;
