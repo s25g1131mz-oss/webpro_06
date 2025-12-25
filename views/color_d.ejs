@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="UTF-8"><title>色彩の詳細</title></head>
+<body>
+    <h1><%= data.name %> の詳細</h1>
+    <div style="width:100px; height:100px; background-color:<%= data.code %>;"></div>
+    <ul>
+        <li>ID: <%= data.id %></li>
+        <li>カラーコード: <%= data.code %></li>
+    </ul>
+    <a href="/color">色彩一覧に戻る</a>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="UTF-8"><title>色彩情報一覧</title></head>
+<body>
+    <h1>🎨 色彩情報一覧</h1>
+    <a href="/">システム一覧に戻る</a> | <a href="/color/add">新規追加</a>
+    <hr>
+    <table border="1">
+        <tr><th>ID</th><th>色彩名</th><th>カラーコード</th><th>操作</th></tr>
+        <% data.forEach(item => { %>
+        <tr>
+            <td><%= item.id %></td>
+            <td><%= item.name %></td>
+            <td style="background-color:<%= item.code %>; color: white;"><%= item.code %></td>
+            <td>
+                <a href="/color/detail/<%= item.id %>">詳細</a> | 
+                <a href="/color/edit/<%= item.id %>">編集</a> | 
+                <a href="/color/delete/<%= item.id %>" onclick="return confirm('削除しますか？')">削除</a>
+            </td>
+        </tr>
+        <% }); %>
+    </table>
+</body>
+</html>

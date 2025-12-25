@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>国フォーム</title>
+</head>
+<body>
+    <h1>国の<%= mode === 'add' ? '追加' : '編集' %></h1>
+    <% const actionUrl = mode === 'add' ? '/country/add' : '/country/update/' + data.id; %>
+    
+    <form action="<%= actionUrl %>" method="POST">
+        <label>国名: <input type="text" name="name" value="<%= data ? data.name : '' %>" required></label><br>
+        <label>首都: <input type="text" name="capital" value="<%= data ? data.capital : '' %>" required></label><br>
+        <button type="submit"><%= mode === 'add' ? '登録' : '更新' %></button>
+    </form>
+    <a href="/country">キャンセル</a>
+</body>
+</html>

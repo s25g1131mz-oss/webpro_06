@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="UTF-8"><title>ハンドサイン一覧</title></head>
+<body>
+    <h1>✌️ ハンドサイン一覧</h1>
+    <a href="/">システム一覧に戻る</a> | <a href="/handsign/add">新規追加</a>
+    <hr>
+    <table border="1">
+        <tr><th>ID</th><th>名前</th><th>操作</th></tr>
+        <% data.forEach(item => { %>
+        <tr>
+            <td><%= item.id %></td>
+            <td><%= item.name %></td>
+            <td>
+                <a href="/handsign/detail/<%= item.id %>">詳細</a> | 
+                <a href="/handsign/edit/<%= item.id %>">編集</a> | 
+                <a href="/handsign/delete/<%= item.id %>" onclick="return confirm('削除しますか？')">削除</a>
+            </td>
+        </tr>
+        <% }); %>
+    </table>
+</body>
+</html>

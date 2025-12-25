@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="UTF-8"><title>ハンドサインフォーム</title></head>
+<body>
+    <h1>ハンドサインの<%= mode === 'add' ? '追加' : '編集' %></h1>
+    <% const actionUrl = mode === 'add' ? '/sign/add' : '/sign/update/' + data.id; %>
+    <form action="<%= actionUrl %>" method="POST">
+        <label>名前: <input type="text" name="name" value="<%= data ? data.name : '' %>" required></label><br>
+        <label>用途: <input type="text" name="usage" value="<%= data ? data.usage : '' %>" required></label><br>
+        <button type="submit"><%= mode === 'add' ? '登録' : '更新' %></button>
+    </form>
+    <a href="/handsign">キャンセル</a>
+</body>
+</html>
